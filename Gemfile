@@ -23,6 +23,7 @@ group :test do
   gem 'capybara'
   gem 'faker', '~> 2.5'
   gem 'database_cleaner', '~> 1.7'
+  gem 'factory_bot', '~> 5.1', '>= 5.1.1'
 end
 
 group :production do

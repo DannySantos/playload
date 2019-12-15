@@ -49,7 +49,7 @@ describe Interactors::Users::Create do
     end
 
     it 'queries the user repository' do
-      expect(user_repo).to have_received(:find_by).with(email)
+      expect(user_repo).to have_received(:find_by).with(email: email)
     end
 
     it 'generates a hashed password' do
@@ -87,7 +87,7 @@ describe Interactors::Users::Create do
 			include_examples 'failure expectations'
 			
 			it 'queries the user repository' do
-				expect(user_repo).to have_received(:find_by).with(email)
+				expect(user_repo).to have_received(:find_by).with(email: email)
 			end
 		end
 

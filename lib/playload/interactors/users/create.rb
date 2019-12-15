@@ -11,7 +11,7 @@ module Interactors
       def call(params:)
         return passwords_do_not_match_result unless passwords_match?(params[:user])
         
-				existing_user = @user_repo.find_by(params[:user][:email])
+				existing_user = @user_repo.find_by(email: params[:user][:email])
 
 				if existing_user
 					return [nil, 'Email address is already registered']

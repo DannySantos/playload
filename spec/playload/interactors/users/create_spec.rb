@@ -45,7 +45,7 @@ describe Interactors::Users::Create do
     end
 
     it 'returns a success message' do
-      expect(result[1]).to eq('User successfully registered')
+      expect(result[1]).to eq('Successfully registered')
     end
 
     it 'queries the user repository' do

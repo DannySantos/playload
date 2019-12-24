@@ -17,7 +17,7 @@ module Interactors
 					return [nil, 'Email address is already registered']
 				else
 					user = @user_repo.create(full_params(params[:user]))
-					[user, 'User successfully registered']
+					[user, 'Successfully registered']
 				end
       end
       

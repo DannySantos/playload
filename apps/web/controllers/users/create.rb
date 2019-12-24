@@ -7,14 +7,16 @@ module Web
 
         params Web::Validations::Users::Create
 
-        def initialize(dependencies)
-          @interactor = dependencies[:interactor]
+        def initialize(interactor: Interactors::Users::Create.new)
+          @interactor = interactor
         end
         
         def call(params)
           if params.valid?
             result = @interactor.call(params: params.to_h)
             process_result(result)
+          else
+            handle_failure(params.error_messages)
           end
         end
         
@@ -22,17 +24,20 @@ module Web
         
         def process_result(result)
           user = result[0]
+          message = result[1]
 
           if user.nil?
-            self.body = Web::Views::User::New.render(exposures)
+            handle_failure([message])
           else
+            flash[:notice] = message
             redirect_to routes.root_path
           end
         end
 
-        def dependencies
-          { interactor: Interactors::Users::Create.new }
-        end          
+        def handle_failure(error_messages)
+          flash[:errors] = error_messages
+          self.body = Web::Views::Users::New.render(exposures)
+        end
       end
     end
   end

@@ -8,6 +8,7 @@ gem 'pg'
 
 gem 'scrypt'
 gem 'puma'
+gem 'rubocop', require: false
 
 group :plugins do
   gem 'hanami-reloader', git: 'https://github.com/DangerDawson/hanami-reloader'

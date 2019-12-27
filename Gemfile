@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rake'
-gem 'hanami',       '~> 1.3'
+gem 'hanami', '~> 1.3'
 gem 'hanami-model', '~> 1.3'
+gem 'rake'
 
 gem 'pg'
 
-gem 'scrypt'
 gem 'puma'
 gem 'rubocop', require: false
+gem 'scrypt'
 
 group :plugins do
   gem 'hanami-reloader', git: 'https://github.com/DangerDawson/hanami-reloader'
@@ -24,11 +24,11 @@ group :test, :development do
 end
 
 group :test do
-  gem 'rspec'
   gem 'capybara'
-  gem 'faker', '~> 2.5'
   gem 'database_cleaner', '~> 1.7'
   gem 'factory_bot', '~> 5.1', '>= 5.1.1'
+  gem 'faker', '~> 2.5'
+  gem 'rspec'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

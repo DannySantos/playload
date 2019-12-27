@@ -14,8 +14,8 @@ describe Interactors::Users::Create do
 
   let(:new_params) do
     {
-			user_repo: user_repo,
-			generate_hashed_password: generate_hashed_password
+      user_repo: user_repo,
+      generate_hashed_password: generate_hashed_password
     }
   end
 
@@ -32,12 +32,12 @@ describe Interactors::Users::Create do
   before do
     allow(user_repo).to receive(:create).and_return(user)
     allow(generate_hashed_password).to receive(:call).and_return({})
-		allow(user_repo).to receive(:find_by).and_return(nil)
+    allow(user_repo).to receive(:find_by).and_return(nil)
   end
 
   describe 'success' do
     before do
-			result
+      result
     end
 
     it 'returns a user' do
@@ -61,49 +61,49 @@ describe Interactors::Users::Create do
     end
   end
 
-	describe 'failure' do
-		shared_examples 'failure expectations' do
+  describe 'failure' do
+    shared_examples 'failure expectations' do
       it 'returns a failure message' do
         expect(result[1]).to eq(failure_message)
-			end
-	
-			it 'does not generate a hashed password' do
-				expect(generate_hashed_password).not_to have_received(:call)
-			end
-	
-			it 'does not create the user in the database' do
-				expect(user_repo).not_to have_received(:create)
-			end
-		end
+      end
 
-		context 'when the user already exists' do
-			let(:failure_message) { 'Email address is already registered' }
+      it 'does not generate a hashed password' do
+        expect(generate_hashed_password).not_to have_received(:call)
+      end
 
-      before do
-				allow(user_repo).to receive(:find_by).and_return(user)
-				result
-			end
-			
-			include_examples 'failure expectations'
-			
-			it 'queries the user repository' do
-				expect(user_repo).to have_received(:find_by).with(email: email)
-			end
-		end
+      it 'does not create the user in the database' do
+        expect(user_repo).not_to have_received(:create)
+      end
+    end
 
-		context 'when the password and confirmation do not match' do
-			let(:failure_message)       { 'Password and confirmation do not match' }
-			let(:password_confirmation) { 'not-the-same' }
+    context 'when the user already exists' do
+      let(:failure_message) { 'Email address is already registered' }
 
       before do
-				result
-			end
-			
-			include_examples 'failure expectations'
-			
-			it 'does not query the user repository' do
-				expect(user_repo).not_to have_received(:find_by)
-			end
-		end
+        allow(user_repo).to receive(:find_by).and_return(user)
+        result
+      end
+
+      include_examples 'failure expectations'
+
+      it 'queries the user repository' do
+        expect(user_repo).to have_received(:find_by).with(email: email)
+      end
+    end
+
+    context 'when the password and confirmation do not match' do
+      let(:failure_message)       { 'Password and confirmation do not match' }
+      let(:password_confirmation) { 'not-the-same' }
+
+      before do
+        result
+      end
+
+      include_examples 'failure expectations'
+
+      it 'does not query the user repository' do
+        expect(user_repo).not_to have_received(:find_by)
+      end
+    end
   end
 end

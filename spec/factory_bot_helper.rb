@@ -3,7 +3,7 @@
 require 'factory_bot'
 require 'rspec'
 
-Dir[Hanami.root.join('spec/factories/**/*.rb')].each { |f| require f }
+Dir[Hanami.root.join('spec/factories/**/*.rb')].sort.each { |f| require f }
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods

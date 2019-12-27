@@ -9,15 +9,15 @@ RSpec.configure do |config|
   config.include Capybara::DSL,           feature: true
   config.include Capybara::RSpecMatchers, feature: true
 
-  Capybara.configure do |config|
-    config.server = :webrick
-    config.javascript_driver = :selenium_chrome_headless
-    config.save_path = "#{Hanami.root}/tmp/screenshots"
-    config.app = Playload
-    config.automatic_label_click = true
-    config.raise_server_errors = true
-    config.default_max_wait_time = 5
-    config.server_host = 'localhost'
-    config.server_port = '2400'
+  Capybara.configure do |capybara_config|
+    capybara_config.server = :webrick
+    capybara_config.javascript_driver = :selenium_chrome_headless
+    capybara_config.save_path = "#{Hanami.root}/tmp/screenshots"
+    capybara_config.app = Playload
+    capybara_config.automatic_label_click = true
+    capybara_config.raise_server_errors = true
+    capybara_config.default_max_wait_time = 5
+    capybara_config.server_host = 'localhost'
+    capybara_config.server_port = '2400'
   end
 end

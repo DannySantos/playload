@@ -10,7 +10,7 @@ module Web
         def initialize(interactor: Interactors::Users::Create.new)
           @interactor = interactor
         end
-        
+
         def call(params)
           if params.valid?
             result = @interactor.call(params: params.to_h)
@@ -19,9 +19,9 @@ module Web
             handle_failure(params.error_messages)
           end
         end
-        
+
         private
-        
+
         def process_result(result)
           user = result[0]
           message = result[1]

@@ -8,7 +8,7 @@ module Web
       include Hanami::Validations::Predicates
 
       self.messages_path = "#{Hanami.root}/apps/web/config/dry_validation.yml"
-        
+
       STRING_VALIDATION = /^$|^[^(\+|=|\-|@)]/.freeze
       EMAIL_VALIDATION = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i.freeze
       PASSWORD_VALIDATION = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W]).+$/.freeze

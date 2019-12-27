@@ -1,3 +1,3 @@
 root to: 'users#new'
 
-resources :users, only: [:new, :create]
+resources :users, only: %i[new create]

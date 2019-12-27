@@ -54,39 +54,39 @@ describe 'Create user', type: :feature, js: true do
     context 'when the password does not match the password confirmation' do
       let(:password_confirmation) { password + '?' }
       let(:error_message)         { 'Password and confirmation do not match' }
-          
+
       before do
         visit Web.routes.new_user_path
         fill_in_registration_form
       end
-        
+
       include_examples 'failure expectations'
     end
-      
+
     context 'when the email is already in use' do
       let(:error_message) { 'Email address is already registered' }
-      
+
       before do
         create(:user, email: email)
         visit Web.routes.new_user_path
         fill_in_registration_form
       end
-      
+
       include_examples 'failure expectations'
     end
-    
+
     context 'with an invalid password' do
       let(:password) { 'invalid-password' }
-      
+
       let(:error_message) do
         'Password must contain at least one: uppercase letter / lowercase letter / number / special character'
       end
-      
+
       before do
         visit Web.routes.new_user_path
         fill_in_registration_form
       end
-      
+
       include_examples 'failure expectations'
     end
   end

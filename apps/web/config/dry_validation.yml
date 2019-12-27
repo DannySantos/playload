@@ -1,0 +1,5 @@
+en:
+  errors:
+    safe_string?: "can not start with the following: [ + | = | - | @ ]"
+    email?: "is invalid"
+    valid_password?: 'must contain at least one: uppercase letter / lowercase letter / number / special character'

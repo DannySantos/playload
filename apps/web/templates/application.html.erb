@@ -5,6 +5,12 @@
     <%= favicon %>
   </head>
   <body>
+    <% flash[:errors]&.each do |error_message| %>
+      <div><%= error_message %></div>
+    <% end %>
+
+    <div><%= flash[:notice] %></div>
+
     <%= yield %>
   </body>
 </html>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 gem 'hanami', '~> 1.3'
@@ -29,6 +31,7 @@ group :test do
   gem 'factory_bot', '~> 5.1', '>= 5.1.1'
   gem 'faker', '~> 2.5'
   gem 'rspec'
+  gem 'rubocop-rspec', require: false
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

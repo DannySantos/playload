@@ -3,7 +3,7 @@
 module Interactors
   module Users
     class Create
-      def initialize(user_repo: UserRepository.new, generate_hashed_password: Interactors::Helpers::GenerateHashedPassword.new)
+      def initialize(user_repo: fetch_user_repo, generate_hashed_password: fetch_generate_hashed_password)
         @user_repo = user_repo
         @generate_hashed_password = generate_hashed_password
       end
@@ -33,6 +33,14 @@ module Interactors
 
       def full_params(user_params)
         user_params.merge(**@generate_hashed_password.call(password: user_params[:password]))
+      end
+
+      def fetch_user_repo
+        UserRepository.new
+      end
+
+      def fetch_generate_hashed_password
+        Interactors::Helpers::GenerateHashedPassword.new
       end
     end
   end

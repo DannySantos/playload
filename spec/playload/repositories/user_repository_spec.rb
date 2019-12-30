@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe UserRepository, type: :repository do
   describe '#find_by' do
     let(:result) { subject.find_by(email: find_by_email) }

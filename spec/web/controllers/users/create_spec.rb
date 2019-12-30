@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Web::Controllers::Users::Create, type: :action do
   let(:action)                { described_class.new(new_params) }
   let(:response)              { action.call(params.dup) }

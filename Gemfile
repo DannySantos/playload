@@ -17,6 +17,8 @@ group :plugins do
 end
 
 group :development do
+  gem 'guard'
+  gem 'guard-process'
   gem 'hanami-webconsole'
 end
 

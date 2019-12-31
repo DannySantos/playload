@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Web::Controllers::Users::Create, type: :action do
   let(:action)                { described_class.new(new_params) }
   let(:response)              { action.call(params.dup) }
@@ -40,7 +42,7 @@ RSpec.describe Web::Controllers::Users::Create, type: :action do
       it 'does not call the interactor' do
         expect(interactor).not_to have_received(:call)
       end
-  
+
       it 'returns the correct response code' do
         expect(response[0]).to eq 200
       end

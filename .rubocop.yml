@@ -1,0 +1,32 @@
+require: rubocop-rspec
+
+Layout/ParameterAlignment:
+  EnforcedStyle: 'with_fixed_indentation'
+
+Documentation:
+  Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false
+
+SignalException:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'apps/web/application.rb'
+  Max: 45
+
+Metrics/ClassLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Max: 120
+
+RSpec/LetSetup:
+  Enabled: true
+
+RSpec/NamedSubject:
+  Enabled: true

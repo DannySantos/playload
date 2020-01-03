@@ -7,6 +7,8 @@ module Web
         include Web::Action
         include Hanami::Validations
 
+        prepend_before :skip_authentication!
+
         params Web::Validations::Users::Create
 
         def initialize(interactor: Interactors::Users::Create.new)

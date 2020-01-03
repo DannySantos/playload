@@ -8,6 +8,8 @@ module Web
         include Hanami::Validations
         include Import[interactor: 'interactors.users.create']
 
+        prepend_before :skip_authentication!
+
         params Web::Validations::Users::Create
 
         def call(params)

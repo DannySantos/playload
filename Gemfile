@@ -13,6 +13,7 @@ gem 'dry-system-hanami', github: 'davydovanton/dry-system-hanami'
 gem 'puma'
 gem 'rubocop', require: false
 gem 'scrypt'
+gem 'warden'
 
 group :plugins do
   gem 'hanami-reloader', git: 'https://github.com/DangerDawson/hanami-reloader'

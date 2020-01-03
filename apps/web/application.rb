@@ -100,6 +100,13 @@ module Web
       #
       # default_response_format :html
 
+      middleware.use Warden::Manager do |manager|
+        manager.default_strategies(:password)
+        manager.failure_app = lambda do |env|
+          Web::Controllers::Sessions::New.new(failure_message: env['warden'].message).call(env)
+        end
+      end
+
       ##
       # TEMPLATES
       #
@@ -249,8 +256,8 @@ module Web
       #
       # See: http://www.rubydoc.info/gems/hanami-controller#Configuration
       controller.prepare do
-        # include MyAuthentication # included in all the actions
-        # before :authenticate!    # run an authentication before callback
+        include Web::Controllers::Authentication
+        before :authenticate!
       end
 
       # Configure the code that will yield each time Web::View is included

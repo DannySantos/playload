@@ -1,0 +1,11 @@
+token = ENV.fetch('CONTROL_TOKEN')
+command = "curl http://localhost:9293/restart?token=#{token}"
+
+guard 'process', :name => 'EndlessRunner', :command => command do
+  apps_dirs = Dir['apps/*/*/'].select { |d| d =~ /config|validations|controllers|views|templates/ }
+
+  directories apps_dirs + %w(lib config)
+  watch(%r{^apps/*})
+  watch(%r{^config/*})
+  watch(%r{^lib/*})
+end

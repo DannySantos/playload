@@ -3,20 +3,20 @@
 module Interactors
   module Users
     class Create
-      def initialize(user_repo: fetch_user_repo, generate_hashed_password: fetch_generate_hashed_password)
-        @user_repo = user_repo
-        @generate_hashed_password = generate_hashed_password
-      end
+      include Import[
+        user_repo: 'repositories.user',
+        generate_hashed_password: 'interactors.helpers.generate_hashed_password'
+      ]
 
       def call(params:)
         return passwords_do_not_match_result unless passwords_match?(params[:user])
 
-        existing_user = @user_repo.find_by(email: params[:user][:email])
+        existing_user = user_repo.find_by(email: params[:user][:email])
 
         if existing_user
           [nil, 'Email address is already registered']
         else
-          user = @user_repo.create(full_params(params[:user]))
+          user = user_repo.create(full_params(params[:user]))
           [user, 'Successfully registered']
         end
       end
@@ -32,15 +32,7 @@ module Interactors
       end
 
       def full_params(user_params)
-        user_params.merge(**@generate_hashed_password.call(password: user_params[:password]))
-      end
-
-      def fetch_user_repo
-        UserRepository.new
-      end
-
-      def fetch_generate_hashed_password
-        Interactors::Helpers::GenerateHashedPassword.new
+        user_params.merge(**generate_hashed_password.call(password: user_params[:password]))
       end
     end
   end

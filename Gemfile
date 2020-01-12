@@ -8,6 +8,8 @@ gem 'rake'
 
 gem 'pg'
 
+gem 'dry-system'
+gem 'dry-system-hanami', github: 'davydovanton/dry-system-hanami'
 gem 'puma'
 gem 'rubocop', require: false
 gem 'scrypt'

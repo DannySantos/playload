@@ -3,6 +3,7 @@
 require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
+require_relative '../system/import'
 require_relative '../lib/playload'
 require_relative '../apps/web/application'
 

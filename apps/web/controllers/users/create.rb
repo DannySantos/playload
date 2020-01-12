@@ -6,16 +6,13 @@ module Web
       class Create
         include Web::Action
         include Hanami::Validations
+        include Import[interactor: 'interactors.users.create']
 
         params Web::Validations::Users::Create
 
-        def initialize(interactor: Interactors::Users::Create.new)
-          @interactor = interactor
-        end
-
         def call(params)
           if params.valid?
-            result = @interactor.call(params: params.to_h)
+            result = interactor.call(params: params.to_h)
             process_result(result)
           else
             handle_failure(params.error_messages)

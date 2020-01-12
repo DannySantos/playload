@@ -19,7 +19,7 @@ module Web
         private
         
         def process
-          user = warden.authenticate!(:password)
+          warden.authenticate!(:password)
           flash[:notice] = 'Successfully logged in'
           redirect_to routes.root_path
         end

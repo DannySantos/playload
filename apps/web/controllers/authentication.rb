@@ -24,10 +24,6 @@ module Web
         return if @skip_authentication
 
         authenticate_current_user!
-
-        return if @skip_signing_address_authentication
-
-        authenticate_signing_address!
       end
 
       def authenticate_current_user!

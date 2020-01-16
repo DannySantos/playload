@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
-RSpec.describe UserRepository, type: :repository do
+RSpec.describe BaseRepository, type: :repository do
+  let(:user_repo) { UserRepository.new }
+
   describe '#find_by' do
-    let(:result) { subject.find_by(email: find_by_email) }
+    let(:result) { user_repo.find_by(email: find_by_email) }
     let(:email)  { Faker::Internet.email }
     let!(:user)  { create(:user, email: email) }
 

@@ -3,7 +3,6 @@
 require 'features_helper'
 
 describe 'User login', type: :feature, js: true do
-  let!(:user)              { create(:user, email: email, password: password) }
   let(:email)              { 'ad@min.com' }
   let(:password)           { 'Password123!' }
   let(:submitted_password) { password }
@@ -14,9 +13,13 @@ describe 'User login', type: :feature, js: true do
     click_button 'Log in'
   end
 
+  before do
+    create(:user, email: email, password: password)
+    visit Web.routes.new_session_path
+  end
+
   describe 'success' do
     before do
-      visit Web.routes.new_session_path
       fill_in_login_form
     end
 
@@ -34,7 +37,6 @@ describe 'User login', type: :feature, js: true do
       let(:submitted_password) { 'Wrong-password123!' }
 
       before do
-        visit Web.routes.new_session_path
         fill_in_login_form
       end
 

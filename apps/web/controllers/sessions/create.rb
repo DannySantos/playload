@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web
   module Controllers
     module Sessions
@@ -15,22 +17,20 @@ module Web
             handle_failure(params.error_messages)
           end
         end
-        
+
         private
-        
+
         def process
           warden.authenticate!(:password)
           flash[:notice] = 'Successfully logged in'
           redirect_to routes.root_path
         end
-        
+
         def handle_failure(error_messages)
-          flash[:errors] = params.error_messages
+          flash[:errors] = error_messages
           redirect_to routes.new_session_path
         end
       end
     end
   end
 end
-
-

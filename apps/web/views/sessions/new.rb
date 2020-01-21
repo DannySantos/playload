@@ -8,11 +8,19 @@ module Web
 
         def log_in_form
           form_for :session, routes.sessions_path do
-            label :email
-            email_field :email
-            label :password
-            password_field :password
-            submit 'Log in'
+            div class: 'col-1-1 mb10' do
+              label :email
+              email_field :email, class: 'w100p'
+            end
+
+            div class: 'col-1-1 mb10' do
+              label :password
+              password_field :password, class: 'w100p'
+            end
+
+            div class: 'col-1-1 mb10 tac' do
+              submit 'Log in'
+            end
           end
         end
       end

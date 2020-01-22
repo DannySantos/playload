@@ -1,27 +1,29 @@
+# frozen_string_literal: true
+
 RSpec.describe Web::Controllers::Sessions::Create, type: :action do
   let(:action)                { described_class.new }
   let(:response)              { action.call(params.dup) }
-  let(:user)                  { build(:user, password: password) } 
-  let(:email)                 { user.email } 
-  let(:password)              { 'Password123!' } 
+  let(:user)                  { build(:user, password: password) }
+  let(:email)                 { user.email }
+  let(:password)              { 'Password123!' }
   let(:warden)                { instance_double Warden::Proxy }
-  
+
   let(:params) do
     {
       session: {
         email: email,
-        password: password,
+        password: password
       }
     }
   end
-  
+
   before do
     allow(action).to receive(:warden).and_return(warden)
     allow(warden).to receive(:authenticate!).and_return(user)
     allow(warden).to receive(:user)
     response
   end
-  
+
   context 'with valid params' do
     it 'calls the `authenticate!` method on warden' do
       expect(warden).to have_received(:authenticate!).with(:password)

@@ -8,13 +8,24 @@ module Web
 
         def user_new_form
           form_for :user, routes.users_path do
-            label :email
-            email_field :email
-            label :password
-            password_field :password
-            label :password_confirmation
-            password_field :password_confirmation
-            submit 'Register'
+            div class: 'col-1-1 mb10' do
+              label :email
+              email_field :email, class: 'w100p'
+            end
+
+            div class: 'col-1-1 mb10' do
+              label :password
+              password_field :password, class: 'w100p'
+            end
+
+            div class: 'col-1-1 mb10' do
+              label :password_confirmation
+              password_field :password_confirmation, class: 'w100p'
+            end
+
+            div class: 'col-1-1 mb10 tac' do
+              submit 'Register'
+            end
           end
         end
       end

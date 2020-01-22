@@ -12,6 +12,10 @@ ClassAndModuleChildren:
 SignalException:
   Enabled: false
 
+Metrics/MethodLength:
+  Exclude:
+    - 'apps/web/views/**/*'
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'

@@ -12,6 +12,7 @@ gem 'dry-system'
 gem 'dry-system-hanami', github: 'davydovanton/dry-system-hanami'
 gem 'puma'
 gem 'rubocop', require: false
+gem 'sassc'
 gem 'scrypt'
 gem 'warden'
 

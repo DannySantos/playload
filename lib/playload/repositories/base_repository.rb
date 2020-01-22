@@ -14,7 +14,7 @@ module BaseRepository
   end
 
   def all_by(conditions)
-    relation_by(conditions).to_a
+    fetch_relation.where(conditions).to_a
   end
 
   def all_with(id, includes: [])

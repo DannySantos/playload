@@ -258,6 +258,8 @@ GEM
       rubocop (>= 0.68.1)
     ruby-progressbar (1.10.1)
     rubyzip (2.0.0)
+    sassc (2.2.1)
+      ffi (~> 1.9)
     scrypt (3.0.7)
       ffi-compiler (>= 1.0, < 2.0)
     selenium-webdriver (3.142.7)
@@ -310,6 +312,7 @@ DEPENDENCIES
   rspec
   rubocop
   rubocop-rspec
+  sassc
   scrypt
   selenium-webdriver
   warden

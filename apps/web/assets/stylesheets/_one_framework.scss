@@ -1,0 +1,334 @@
+@import 'colors';
+
+////////////////////////////////////////////////////////
+//                    FONT HELPERS                    //
+////////////////////////////////////////////////////////
+
+.fwn { font-weight: normal !important; }
+.fwb { font-weight: bold !important; }
+
+.tal { text-align: left !important; }
+.tar { text-align: right !important; }
+.tac { text-align: center !important; }
+
+.tdn { text-decoration: none !important; }
+.tdu { text-decoration: underline; }
+
+.ttu { text-transform: uppercase !important; }
+
+.ti0 { text-indent: 0 !important; }
+
+// Iterates through values to create classes
+// Examples:
+// 
+// .fz15   == font-size: 15px
+
+$font-sizes-pixels: 8 9 10 11 12 13 14 15 16 17 18;
+
+@each $size in $font-sizes-pixels {
+  .fz#{$size} {
+    font-size: #{$size}px !important;
+  }
+}
+
+// Not Emmet commands because decimal em values are too difficult to make into class names
+
+.fz-xs { font-size: 0.5em !important; }
+.fz-s { font-size: 0.8em !important; }
+.fz-m { font-size: 1em !important; }
+.fz-ml { font-size: 1.3em !important; }
+.fz-l { font-size: 1.8em !important; }
+.fz-xl { font-size: 2.5em !important; }
+.fz-xxl { font-size: 3.7em !important; }
+
+////////////////////////////////////////////////////////
+//                 POSITIONING HELPERS                //
+////////////////////////////////////////////////////////
+
+.poa { position: absolute !important; }
+.por { position: relative !important; }
+.pof { position: fixed !important; }
+
+.t0  { top: 0 !important; }
+.b0  { bottom: 0 !important; }
+.l0  { left: 0 !important; }
+.r0  { right: 0 !important; }
+
+.fll { float: left; }
+.flr { float: right; }
+.fln { float: none; }
+.cll { clear: left; }
+.clr { clear: right; }
+.clb { clear: both; }
+
+.vat { vertical-align: top; }
+.vab { vertical-align: bottom; }
+.vam { vertical-align: middle; }
+
+////////////////////////////////////////////////////////
+//                   DISPLAY HELPERS                  //
+////////////////////////////////////////////////////////
+
+.di  { display: inline !important; }
+.db  { display: block !important; }
+.dib { display: inline-block !important; }
+.dn  { display: none !important; }
+.dg  { display: grid; }
+
+.df {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+.fx1 { flex: 1px; }
+.fww { flex-wrap: wrap }
+
+.vh  { visibility: hidden; }
+
+.ovv { overflow: visible; }
+.ovh { overflow: hidden; }
+.ovs { overflow: scroll; }
+
+.m-a { margin: auto !important; }
+
+.wi    { width: initial !important; }
+.hi    { height: initial !important; }
+.w100p { width: 100% !important;}
+.w50p  { width: 50% !important;}
+.h100p { height: 100% !important; }
+
+.bdg   { border: 1px solid #c7c7c7 !important; }
+
+.bd0   { border: 0 !important; }
+.bdl0  { border-left: 0 !important; }
+.bdr0  { border-right: 0 !important; }
+.bdt0  { border-top: 0 !important; }
+.bdb0  { border-bottom: 0 !important; }
+
+.bdrs0   { border-radius: 0; }
+.bdrs5   { border-radius: 5px; }
+.bdrs10  { border-radius: 10px; }
+.bdrs50p { border-radius: 50%; }
+
+// Border radius on the top, bottom, left and right
+.bdrsr5  { border-radius: 0 5px 5px 0 !important; }
+.bdrsl5  { border-radius: 5px 0 0 5px !important; }
+.bdrst5  { border-radius: 5px 5px 0 0 !important; }
+.bdrsb5  { border-radius: 0 0 5px 5px !important; }
+
+.bdrsr10 { border-radius: 0 10px 10px 0 !important; }
+.bdrsl10 { border-radius: 10px 0 0 10px !important; }
+.bdrst10 { border-radius: 10px 10px 0 0 !important; }
+.bdrsb10 { border-radius: 0 0 10px 10px !important; }
+
+.lhi { line-height: initial; }
+
+.jcsb { justify-content: space-between; }
+.aic { align-items: center; }
+
+////////////////////////////////////////////////////////
+//                    MISC HELPERS                    //
+////////////////////////////////////////////////////////
+
+// Center contents of a div vertically using Flexbox
+.flex-vcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Center contents of a div vertically using Grid
+.grid-vcenter {
+  height: 100%;
+  display: grid;
+  align-content: center;
+}
+
+// Two equal grid columns
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+// Three equal grid columns
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+// Make text look like a link (useful for JavaScript span triggers)
+.link-primary {
+  color: $primary-color;
+  text-decoration: underline;
+  cursor: pointer;
+  
+  &:hover {
+    color: $primary-color-highlight;
+  }
+}
+
+.link-secondary {
+  color: $secondary-color;
+  text-decoration: underline;
+  cursor: pointer;
+  
+  &:hover {
+    color: $secondary-color-highlight;
+  }
+}
+
+.cup {
+  cursor: pointer;
+}
+
+.primary-bg {
+  background-color: $primary-color !important;
+}
+
+.grey-bg {
+  background-color: #e6e6e6 !important;
+}
+
+.success-color {
+  color: $success-color;
+}
+
+.error-color {
+  color: $error-color;
+}
+
+.white-color {
+  color: #fff;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+// Small red text for error handling
+.error-text {
+  font-size: 0.8em;
+  color: $error-color;
+}
+
+// Red bordered input fields for error handling
+.error-input {
+  border: 1px solid $error-color;
+}
+
+// Remove all basic styling from unordered lists
+.lisn {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  a: hover {
+    text-decoration: none !important;
+  }
+}
+
+// Hide an element but still have it readable by screenreaders for accessibility (useful for labels)
+.screenreader {
+  clip: rect(1px, 1px, 1px, 1px); 
+  height: 1px; 
+  width: 1px; 
+  overflow: hidden; 
+  position: absolute !important;
+}
+
+.bgt {
+  background-color: transparent;
+}
+
+////////////////////////////////////////////////////////
+//                     BOX HELPERS                    //
+////////////////////////////////////////////////////////
+
+$pixel-sizes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 20 25 30 50 200;
+
+// Width
+@each $size in $pixel-sizes {
+  .w#{$size} {
+    width: #{$size}px !important;
+  }
+}
+
+// Height
+@each $size in $pixel-sizes {
+  .h#{$size} {
+    height: #{$size}px !important;
+  }
+}
+
+// Margin
+@each $size in $pixel-sizes {
+  .m#{$size} {
+    margin: #{$size}px !important;
+  }
+}
+
+// Margin top
+@each $size in $pixel-sizes {
+  .mt#{$size} {
+    margin-top: #{$size}px !important;
+  }
+}
+
+// Margin right
+@each $size in $pixel-sizes {
+  .mr#{$size} {
+    margin-right: #{$size}px !important;
+  }
+}
+
+// Margin bottom
+@each $size in $pixel-sizes {
+  .mb#{$size} {
+    margin-bottom: #{$size}px !important;
+  }
+}
+
+// Margin left
+@each $size in $pixel-sizes {
+  .ml#{$size} {
+    margin-left: #{$size}px !important;
+  }
+}
+
+// Padding
+@each $size in $pixel-sizes {
+  .p#{$size} {
+    padding: #{$size}px !important;
+  }
+}
+
+// Padding top
+@each $size in $pixel-sizes {
+  .pt#{$size} {
+    padding-top: #{$size}px !important;
+  }
+}
+
+// Padding right
+@each $size in $pixel-sizes {
+  .pr#{$size} {
+    padding-right: #{$size}px !important;
+  }
+}
+
+// Padding bottom
+@each $size in $pixel-sizes {
+  .pb#{$size} {
+    padding-bottom: #{$size}px !important;
+  }
+}
+
+// Padding left
+@each $size in $pixel-sizes {
+  .pl#{$size} {
+    padding-left: #{$size}px !important;
+  }
+}

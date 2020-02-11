@@ -8,8 +8,7 @@ module Web
 
         prepend_before :skip_authentication!
 
-        def call(params)
-        end
+        def call(params); end
       end
     end
   end

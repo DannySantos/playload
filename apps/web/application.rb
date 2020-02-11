@@ -2,6 +2,7 @@
 
 require 'hanami/helpers'
 require 'hanami/assets'
+require 'sassc'
 
 module Web
   class Application < Hanami::Application

@@ -13,7 +13,7 @@ RSpec.configure do |config|
 
   Capybara.configure do |capybara_config|
     capybara_config.server = :webrick
-    capybara_config.javascript_driver = :selenium_chrome
+    capybara_config.javascript_driver = :selenium_chrome_headless
     capybara_config.save_path = "#{Hanami.root}/tmp/screenshots"
     capybara_config.app = Playload
     capybara_config.automatic_label_click = true

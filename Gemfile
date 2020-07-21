@@ -14,6 +14,7 @@ gem 'puma'
 gem 'rubocop', require: false
 gem 'sassc'
 gem 'scrypt'
+gem 'uuid'
 gem 'warden'
 
 group :plugins do

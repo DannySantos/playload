@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GameEngineRepository < Hanami::Repository
   include ::BaseRepository
 

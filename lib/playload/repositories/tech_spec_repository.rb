@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TechSpecRepository < Hanami::Repository
   include ::BaseRepository
 

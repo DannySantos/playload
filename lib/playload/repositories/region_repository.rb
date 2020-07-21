@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RegionRepository < Hanami::Repository
   include ::BaseRepository
 

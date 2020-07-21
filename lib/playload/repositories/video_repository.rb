@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class VideoRepository < Hanami::Repository
   include ::BaseRepository
 

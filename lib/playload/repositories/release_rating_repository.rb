@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReleaseRatingRepository < Hanami::Repository
   include ::BaseRepository
 

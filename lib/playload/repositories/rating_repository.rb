@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RatingRepository < Hanami::Repository
   include ::BaseRepository
 

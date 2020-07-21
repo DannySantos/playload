@@ -7,7 +7,7 @@ Hanami::Model.migration do
 
       column :url, String, null: false
       column :type, String, null: false
-      column :group_id, Integer, null: false, index: true
+      column :group_id, String, null: false, index: true
       column :created_at, DateTime, null: false
       column :updated_at, DateTime, null: false
 

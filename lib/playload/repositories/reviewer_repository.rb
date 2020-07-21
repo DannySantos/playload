@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReviewerRepository < Hanami::Repository
   include ::BaseRepository
 

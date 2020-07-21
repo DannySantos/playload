@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ScreenshotRepository < Hanami::Repository
   include ::BaseRepository
 

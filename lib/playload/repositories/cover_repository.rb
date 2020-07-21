@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CoverRepository < Hanami::Repository
   include ::BaseRepository
 

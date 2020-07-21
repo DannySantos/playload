@@ -5,10 +5,9 @@ Hanami::Model.migration do
     create_table :screenshots do
       primary_key :id
 
-      column :resolution, String, null: false
       column :url, String, null: false, unique: true, index: true
-      column :type, String, null: false
-      column :group_id, Integer, null: false, index: true
+      column :type, String, null: true
+      column :group_id, String, null: false, index: true
       column :created_at, DateTime, null: false
       column :updated_at, DateTime, null: false
 

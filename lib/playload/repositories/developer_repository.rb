@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DeveloperRepository < Hanami::Repository
   include ::BaseRepository
 

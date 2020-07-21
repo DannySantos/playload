@@ -23,7 +23,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :truncation
   end
 
-  config.after(:each, js: true) do |_example|
+  config.after do
     DatabaseCleaner.clean
   end
 end

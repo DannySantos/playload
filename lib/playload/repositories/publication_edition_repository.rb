@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PublicationEditionRepository < Hanami::Repository
   include ::BaseRepository
 

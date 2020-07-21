@@ -1,4 +1,6 @@
-class GameRatingDescriptionRepository < Hanami::Repository
+# frozen_string_literal: true
+
+class ReleaseRatingDescriptionRepository < Hanami::Repository
   include ::BaseRepository
 
   associations do

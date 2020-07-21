@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ClassificationRepository < Hanami::Repository
   include ::BaseRepository
 

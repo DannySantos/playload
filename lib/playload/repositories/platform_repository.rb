@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PlatformRepository < Hanami::Repository
   include ::BaseRepository
 

@@ -93,6 +93,8 @@ GEM
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.11.0)
     erubi (1.9.0)
+    ethon (0.12.0)
+      ffi (>= 1.3.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
     faker (2.10.0)
@@ -102,6 +104,7 @@ GEM
       ffi (>= 1.0.0)
       rake
     formatador (0.2.5)
+    gameopedia-client (0.1.4)
     guard (2.16.1)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -273,6 +276,8 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.10)
     transproc (1.1.1)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.0)
@@ -299,6 +304,7 @@ DEPENDENCIES
   dry-system-hanami!
   factory_bot (~> 5.1, >= 5.1.1)
   faker (~> 2.5)
+  gameopedia-client
   guard
   guard-process
   hanami (~> 1.3)
@@ -315,8 +321,9 @@ DEPENDENCIES
   sassc
   scrypt
   selenium-webdriver
+  typhoeus
   warden
   webdrivers
 
 BUNDLED WITH
-   2.1.3
+   2.1.4

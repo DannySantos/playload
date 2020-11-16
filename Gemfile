@@ -10,10 +10,12 @@ gem 'pg'
 
 gem 'dry-system'
 gem 'dry-system-hanami', github: 'davydovanton/dry-system-hanami'
+gem 'gameopedia-client'
 gem 'puma'
 gem 'rubocop', require: false
 gem 'sassc'
 gem 'scrypt'
+gem 'typhoeus'
 gem 'warden'
 
 group :plugins do

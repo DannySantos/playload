@@ -16,6 +16,7 @@ gem 'rubocop', require: false
 gem 'sassc'
 gem 'scrypt'
 gem 'typhoeus'
+gem 'uuid'
 gem 'warden'
 
 group :plugins do

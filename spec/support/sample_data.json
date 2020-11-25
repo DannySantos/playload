@@ -1,0 +1,484 @@
+{
+  "GameData": {
+    "source": "/consumer/api/data/europe/GB/retail2/updates/yesterday.json",
+    "type": "retailinfo"
+  },
+  "GameInfo": [
+    {
+      "public_id": "88107-13-5729-Online (Playstation Network)",
+      "release_id": 88107,
+      "updated": "2020-01-21T05:17:59.000Z",
+      "title": "Resident Evil 2",
+      "us_title": "Resident Evil 2: Remake",
+      "uk_title": null,
+      "alternative_titles": [
+        "Resident Evil II",
+        "Resident Evil Two",
+        "RE2",
+        "Recident Evil 2",
+        "Residentevil 2"
+      ],
+      "platform": { "id": 191, "name": "PlayStation 4" },
+      "release_date": "25-01-2019",
+      "edition": { "id": 5729, "name": "Deluxe Edition" },
+      "distribution": "Online (Playstation Network)",
+      "region": { "id": 13, "name": "United Kingdom" },
+      "cover": {
+        "original_url": "https://s3.amazonaws.com/gameopedia_covers/covers/883313/a999b7865101515a32bcbb18c57eb5ae.jpg",
+        "other_resolutions": [
+          {
+            "url": "https://s3.amazonaws.com/gameopedia_covers/covers/883313/a999b7865101515a32bcbb18c57eb5ae_big_thumb.jpg",
+            "type": "big_thumb"
+          },
+          {
+            "url": "https://s3.amazonaws.com/gameopedia_covers/covers/883313/a999b7865101515a32bcbb18c57eb5ae_medium_thumb.jpg",
+            "type": "medium_thumb"
+          },
+          {
+            "url": "https://s3.amazonaws.com/gameopedia_covers/covers/883313/a999b7865101515a32bcbb18c57eb5ae_thumb.jpg",
+            "type": "thumb"
+          },
+          {
+            "url": "https://s3.amazonaws.com/gameopedia_covers/covers/883313/a999b7865101515a32bcbb18c57eb5ae_small.jpg",
+            "type": "small"
+          }
+        ]
+      },
+      "companies": {
+        "publishers": [{ "id": "3112", "name": "CE Europe Limited" }],
+        "developers": [{ "id": "7478", "name": "Capcom Co., Ltd." }]
+      },
+      "game_descriptions": [
+        {
+          "game_description": "In Resident Evil 2, the classic action, tense exploration, and puzzle solving gameplay that defined the Resident Evil series returns. Players join rookie police officer Leon Kennedy and college student Claire Redfield, who are thrust together by a disastrous outbreak in Raccoon City that transformed its population into deadly zombies. Both Leon and Claire have their own separate playable campaigns, allowing players to see the story from both characters’ perspectives. The fate of these two fan favorite characters is in players hands as they work together to survive and get to the bottom of what is behind the terrifying attack on the city. Will they make it out alive? ",
+          "type": "STD_ENG",
+          "region": "English",
+          "std": true
+        }
+      ],
+      "PEGI": {
+        "ratings": ["18+"],
+        "descriptions": ["Violence", "Bad Language"]
+      },
+      "key_features_list": [
+        {
+          "key_features": "* A spine-chilling reimagining of a horror classic - Based on the original PlayStation console release in 1998, the new game has been completely rebuilt from the ground up for a deeper narrative experience.\r\n\r\n* A whole new perspective – New over-the-shoulder camera mode and modernized control scheme creates a more modern take on the survival horror experience and offers players a trip down memory lane with the original gameplay modes from the 1998 release.\r\n\r\n* Terrifyingly realistic visuals – Built on Capcom’s proprietary RE Engine, Resident Evil 2 delivers breathtakingly photorealistic visuals in 4K whilst stunning lighting creates an up-close, intense and atmospheric experience as players roam the corridors of the Raccoon City Police Department (RPD).\r\n\r\n* Face the grotesque hordes – Zombies are brought to life with a horrifyingly realistic wet gore effect as they react in real time taking instant visible damage, making every bullet count.\r\n\r\n* Iconic series defining gameplay – Engage in frenzied combat with enemies, explore dark menacing corridors, solve puzzles to access areas and collect and use items discovered around the environment in a terrifying constant fight for survival.\r\n\r\n* See favorite characters in a whole new light - Join rookie police officer Leon S. Kennedy on his first day in the job and college student Claire Redfield, who is searching for her brother amidst a terrifying zombie epidemic.\r\n\r\n* Step into the rookie shoes of both heroes - Enjoy separately playable campaigns for both Leon and Claire, allowing players to see the story from both characters’ perspective. ",
+          "type": "STD_ENG",
+          "region": "English",
+          "std": true
+        },
+        {
+          "key_features": "Includes:\r\n\r\n* Leon Costume - 'Arklay Sheriff'\r\n* Leon Costume - 'Noir'\r\n* Claire Costume - 'Military'\r\n* Claire Costume - 'Noir'\r\n* Claire Costume - 'Elza Walker'\r\n* Deluxe Weapon - 'Samurai Edge - Albert Model'\r\n* Original Ver.' Soundtrack Swap",
+          "type": "ENG",
+          "region": "English",
+          "std": false
+        }
+      ],
+      "links": [
+        { "url": "http://www.residentevil2.com/us/", "type": "Website" },
+        { "url": "https://www.facebook.com/residentevil", "type": "Facebook" },
+        { "url": "https://twitter.com/re_games", "type": "Twitter" }
+      ],
+      "expansions": [
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235463",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235528",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235518",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235524",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235545",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235496",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235500",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235532",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235475",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235926",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235459",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235455",
+          "main_required": "Y"
+        },
+        {
+          "main_release_id": "88107",
+          "expansion_release_id": "235467",
+          "main_required": "Y"
+        }
+      ],
+      "groups": [],
+      "other_releases": ["88108", "88109"],
+      "game_id": "27215",
+      "reviews": [
+        {
+          "reviewer": "GamesRadar",
+          "reviewer_id": "50",
+          "locality_id": "16",
+          "rating": "4/5",
+          "link": "https://www.gamesradar.com/resident-evil-2-remake-review/"
+        },
+        {
+          "reviewer": "IGN.com",
+          "reviewer_id": "45",
+          "locality_id": "16",
+          "rating": "9/10",
+          "link": "https://www.ign.com/articles/2019/01/22/resident-evil-2-review"
+        },
+        {
+          "reviewer": "Gamespot",
+          "reviewer_id": "46",
+          "locality_id": "16",
+          "rating": "9/10",
+          "link": "https://www.gamespot.com/reviews/resident-evil-2-review-re-viving-nightmares/1900-6417071/"
+        },
+        {
+          "reviewer": "The Guardian",
+          "reviewer_id": "52",
+          "locality_id": "13",
+          "rating": "5/5",
+          "link": "https://www.theguardian.com/games/2019/jan/22/resident-evil-2-review-genre-defining-horror-loaded-with-dread"
+        },
+        {
+          "reviewer": "Eurogamer.net",
+          "reviewer_id": "42",
+          "locality_id": "13",
+          "rating": "/10",
+          "link": "https://www.eurogamer.net/articles/2019-01-22-resident-evil-2-review"
+        },
+        {
+          "reviewer": "Destructoid",
+          "reviewer_id": "56",
+          "locality_id": "16",
+          "rating": "9/10",
+          "link": "https://www.destructoid.com/review-resident-evil-2-2019--538881.phtml"
+        },
+        {
+          "reviewer": "Game Informer",
+          "reviewer_id": "53",
+          "locality_id": "16",
+          "rating": "9.5/10",
+          "link": "https://www.gameinformer.com/Resident%20Evil%202%20game%20informer%20Review"
+        }
+      ],
+      "classifications": [
+        {
+          "id": "1",
+          "name": "Genre",
+          "priority": 4,
+          "classifications": [{ "id": "17", "name": "Adventure" }]
+        },
+        {
+          "id": "16",
+          "name": "Sub-genre",
+          "priority": 5,
+          "classifications": [
+            { "id": "258", "name": "Shooter" },
+            { "id": "282", "name": "Action" },
+            { "id": "285", "name": "Puzzle" }
+          ]
+        },
+        {
+          "id": "17",
+          "name": "Theme",
+          "priority": 11,
+          "classifications": [
+            { "id": "301", "name": "Horror" },
+            { "id": "431", "name": "Zombie" }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Main Perspective",
+          "priority": 25,
+          "classifications": [{ "id": "6", "name": "3rd-Person Perspective" }]
+        },
+        {
+          "id": "11",
+          "name": "Graphic Technology",
+          "priority": 28,
+          "classifications": [{ "id": "182", "name": "3D" }]
+        },
+        {
+          "id": "36",
+          "name": "Story / Campaign Length",
+          "priority": 66,
+          "classifications": [{ "id": "8434", "name": "10-15 Hours" }]
+        }
+      ],
+      "technical_specifications": [
+        {
+          "id": "24",
+          "name": "Single Player",
+          "priority": 0,
+          "tech_specs": [
+            {
+              "id": "589",
+              "name": "Single Player",
+              "value": "Y",
+              "priority": 1
+            }
+          ]
+        },
+        {
+          "id": "26",
+          "name": "Versus Multiplayer",
+          "priority": 5,
+          "tech_specs": [
+            { "id": "555", "name": "Versus", "value": "N", "priority": 0 }
+          ]
+        },
+        {
+          "id": "27",
+          "name": "Co-op",
+          "priority": 7,
+          "tech_specs": [
+            { "id": "4", "name": "Co-op", "value": "N", "priority": 0 }
+          ]
+        }
+      ],
+      "screenshots": [
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693236/bcc36bb6f5b7c7495a6974de2887455d.jpg",
+          "other_resolutions": [
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693236/bcc36bb6f5b7c7495a6974de2887455d_small.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693236/bcc36bb6f5b7c7495a6974de2887455d_thumb.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693236/bcc36bb6f5b7c7495a6974de2887455d_full1800.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693236/bcc36bb6f5b7c7495a6974de2887455d_full1080.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693236/bcc36bb6f5b7c7495a6974de2887455d_full720.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693236/bcc36bb6f5b7c7495a6974de2887455d_full480.jpg",
+              "type": null
+            }
+          ]
+        },
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693237/727a1eeeca9185fd1e8c6eaa68e07f31.jpg",
+          "other_resolutions": [
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693237/727a1eeeca9185fd1e8c6eaa68e07f31_small.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693237/727a1eeeca9185fd1e8c6eaa68e07f31_thumb.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693237/727a1eeeca9185fd1e8c6eaa68e07f31_full1800.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693237/727a1eeeca9185fd1e8c6eaa68e07f31_full1080.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693237/727a1eeeca9185fd1e8c6eaa68e07f31_full720.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693237/727a1eeeca9185fd1e8c6eaa68e07f31_full480.jpg",
+              "type": null
+            }
+          ]
+        },
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693238/7e8efa8c7c69e88ecf24594c89685ee9.jpg",
+          "other_resolutions": [
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693238/7e8efa8c7c69e88ecf24594c89685ee9_small.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693238/7e8efa8c7c69e88ecf24594c89685ee9_thumb.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693238/7e8efa8c7c69e88ecf24594c89685ee9_full1800.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693238/7e8efa8c7c69e88ecf24594c89685ee9_full1080.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693238/7e8efa8c7c69e88ecf24594c89685ee9_full720.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693238/7e8efa8c7c69e88ecf24594c89685ee9_full480.jpg",
+              "type": null
+            }
+          ]
+        },
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693239/ecdd9be12419901eef4b89db3cc59534.jpg",
+          "other_resolutions": [
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693239/ecdd9be12419901eef4b89db3cc59534_small.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693239/ecdd9be12419901eef4b89db3cc59534_thumb.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693239/ecdd9be12419901eef4b89db3cc59534_full1800.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693239/ecdd9be12419901eef4b89db3cc59534_full1080.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693239/ecdd9be12419901eef4b89db3cc59534_full720.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693239/ecdd9be12419901eef4b89db3cc59534_full480.jpg",
+              "type": null
+            }
+          ]
+        },
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693240/3428bf7834bf3ca1ffd1a587792c4643.jpg",
+          "other_resolutions": [
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693240/3428bf7834bf3ca1ffd1a587792c4643_small.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693240/3428bf7834bf3ca1ffd1a587792c4643_thumb.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693240/3428bf7834bf3ca1ffd1a587792c4643_full1800.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693240/3428bf7834bf3ca1ffd1a587792c4643_full1080.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693240/3428bf7834bf3ca1ffd1a587792c4643_full720.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693240/3428bf7834bf3ca1ffd1a587792c4643_full480.jpg",
+              "type": null
+            }
+          ]
+        },
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693244/b1fba97d6821de1b47107171fbf1d30a.jpg",
+          "other_resolutions": [
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693244/b1fba97d6821de1b47107171fbf1d30a_small.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693244/b1fba97d6821de1b47107171fbf1d30a_thumb.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693244/b1fba97d6821de1b47107171fbf1d30a_full1800.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693244/b1fba97d6821de1b47107171fbf1d30a_full1080.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693244/b1fba97d6821de1b47107171fbf1d30a_full720.jpg",
+              "type": null
+            },
+            {
+              "url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/1693244/b1fba97d6821de1b47107171fbf1d30a_full480.jpg",
+              "type": null
+            }
+          ]
+        },
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/2520859/7c745cfd4f304cd8b1190f62acd7ca49.jpg",
+          "other_resolutions": []
+        },
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/2520860/3566c0121b30e913094b13687414fb37.jpg",
+          "other_resolutions": []
+        },
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/2520861/82733ce05a21ab865b8b911cb9b76beb.jpg",
+          "other_resolutions": []
+        },
+        {
+          "original_url": "http://s3.amazonaws.com/gameopedia_covers/screenshots/2520863/bbc91e799cdbda4da215b1f778b85d08.jpg",
+          "other_resolutions": []
+        }
+      ],
+      "videos": [
+        {
+          "url": "https://vimeo.com/274642960",
+          "embed_url": "http://player.vimeo.com/video/274642960",
+          "info": "Announcement Trailer;United States"
+        }
+      ],
+      "game_engines": [],
+      "group_series": [],
+      "figurine_franchises": [],
+      "accessory_types": []
+    }
+  ]
+}

@@ -2,14 +2,11 @@
 
 module Parser
   module Helpers
-    class FindOrCreatePublication
+    class UpdatePublication
       include Import[publication_repo: 'repositories.publication']
 
-      def call(game_details:, release:)
-        publication = publication_repo.find_by(title: game_details['title'])
-        return publication if publication
-
-        publication_repo.create(fetch_publication_attrs(game_details, release))
+      def call(game_details:, release:, publication:)
+        publication_repo.update(publication.id, fetch_publication_attrs(game_details, release))
       end
 
       private

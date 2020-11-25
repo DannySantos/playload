@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Parser::Helpers::FindOrCreatePublication do
+RSpec.describe Parser::Helpers::CreatePublication do
   let(:result)           { described_class.new(new_params).call(call_params) }
   let(:new_params)       { Hash[publication_repo: publication_repo] }
   let(:publication_repo) { instance_double PublicationRepository }
@@ -39,7 +39,8 @@ RSpec.describe Parser::Helpers::FindOrCreatePublication do
       end
 
       it 'tries to find the publication in the database' do
-        expect(publication_repo).to have_received(:find_by).with(title: 'Resident Evil 2')
+        expect(publication_repo).to have_received(:find_by)
+          .with(gameopedia_id: '88107-13-5729-Online (Playstation Network)')
       end
 
       it 'creates only one publication' do
@@ -59,7 +60,8 @@ RSpec.describe Parser::Helpers::FindOrCreatePublication do
       end
 
       it 'tries to find the publication in the database' do
-        expect(publication_repo).to have_received(:find_by).with(title: 'Resident Evil 2')
+        expect(publication_repo).to have_received(:find_by)
+          .with(gameopedia_id: '88107-13-5729-Online (Playstation Network)')
       end
 
       it 'does not create the publication' do

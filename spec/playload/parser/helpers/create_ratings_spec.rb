@@ -36,7 +36,7 @@ RSpec.describe Parser::Helpers::CreateRatings do
       result
     end
 
-    describe 'creating ratings' do
+    context 'when creating ratings' do
       it 'tries to find the rating in the database' do
         expect(rating_repo).to have_received(:find_by).with(name: '18+')
       end
@@ -58,7 +58,7 @@ RSpec.describe Parser::Helpers::CreateRatings do
       end
     end
 
-    describe 'creating rating descriptions' do
+    context 'when creating rating descriptions' do
       it 'tries to find the first rating_description in the database' do
         expect(rating_description_repo).to have_received(:find_by).with(name: 'Violence')
       end

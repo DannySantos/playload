@@ -45,7 +45,7 @@ RSpec.describe Parser::Helpers::CreateReviews do
       result
     end
 
-    describe 'creating reviews' do
+    context 'when creating reviews' do
       it 'tries to find the reviews in the database' do
         expect(review_repo).to have_received(:find_by)
           .with(release_id: release.id, reviewer_id: reviewer.id, region_id: region.id)

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Parser::Helpers::FindOrCreateRelease do
+RSpec.describe Parser::Helpers::CreateRelease do
   let(:result)       { described_class.new(new_params).call(call_params) }
   let(:new_params)   { Hash[release_repo: release_repo] }
   let(:release_repo) { instance_double ReleaseRepository }

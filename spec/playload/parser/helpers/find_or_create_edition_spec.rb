@@ -28,7 +28,7 @@ RSpec.describe Parser::Helpers::FindOrCreateEdition do
       result
     end
 
-    describe 'creating editions' do
+    context 'when creating editions' do
       it 'tries to find the edition in the database' do
         expect(edition_repo).to have_received(:find).with(5729)
       end

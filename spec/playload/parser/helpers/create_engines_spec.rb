@@ -21,7 +21,7 @@ RSpec.describe Parser::Helpers::CreateEngines do
       result
     end
 
-    describe 'creating engines' do
+    context 'when creating engines' do
       it 'tries to find the game in the database' do
         expect(engine_repo).not_to have_received(:find_by)
       end

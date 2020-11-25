@@ -12,10 +12,17 @@ RSpec.describe Parser::Parser do
   let(:release)      { build(:release) }
   let(:publication)  { build(:publication) }
 
-  let(:find_or_create_game)        { instance_double Parser::Helpers::FindOrCreateGame }
-  let(:find_or_create_platform)    { instance_double Parser::Helpers::FindOrCreatePlatform }
-  let(:find_or_create_release)     { instance_double Parser::Helpers::FindOrCreateRelease }
-  let(:find_or_create_publication) { instance_double Parser::Helpers::FindOrCreatePublication }
+  let(:game_repo)          { instance_double GameRepository }
+  let(:release_repo)       { instance_double ReleaseRepository }
+  let(:publication_repo)   { instance_double PublicationRepository }
+
+  let(:create_game)        { instance_double Parser::Helpers::CreateGame }
+  let(:create_release)     { instance_double Parser::Helpers::CreateRelease }
+  let(:create_publication) { instance_double Parser::Helpers::CreatePublication }
+
+  let(:update_game)        { instance_double Parser::Helpers::UpdateGame }
+  let(:update_release)     { instance_double Parser::Helpers::UpdateRelease }
+  let(:update_publication) { instance_double Parser::Helpers::UpdatePublication }
 
   let(:create_engines)             { instance_double Parser::Helpers::CreateEngines }
   let(:create_ratings)             { instance_double Parser::Helpers::CreateRatings }
@@ -33,12 +40,20 @@ RSpec.describe Parser::Parser do
   let(:create_classifications)     { instance_double Parser::Helpers::CreateClassifications }
   let(:create_tech_specs)          { instance_double Parser::Helpers::CreateTechSpecs }
 
+  let(:find_or_create_platform) { instance_double Parser::Helpers::FindOrCreatePlatform }
+
   let(:new_params) do
     {
-      find_or_create_game: find_or_create_game,
+      game_repo: game_repo,
+      release_repo: release_repo,
+      publication_repo: publication_repo,
+      create_game: create_game,
+      create_release: create_release,
+      create_publication: create_publication,
+      update_game: update_game,
+      update_release: update_release,
+      update_publication: update_publication,
       find_or_create_platform: find_or_create_platform,
-      find_or_create_release: find_or_create_release,
-      find_or_create_publication: find_or_create_publication,
       create_engines: create_engines,
       create_ratings: create_ratings,
       create_developers: create_developers,
@@ -58,10 +73,19 @@ RSpec.describe Parser::Parser do
   end
 
   before do
-    allow(find_or_create_game).to receive(:call).and_return(game)
+    allow(game_repo).to receive(:find_by).and_return(nil)
+    allow(release_repo).to receive(:find).and_return(nil)
+    allow(publication_repo).to receive(:find_by).and_return(nil)
+
+    allow(create_game).to receive(:call).and_return(game)
+    allow(create_release).to receive(:call).and_return(release)
+    allow(create_publication).to receive(:call).and_return(publication)
+
+    allow(update_game).to receive(:call).and_return(game)
+    allow(update_release).to receive(:call).and_return(release)
+    allow(update_publication).to receive(:call).and_return(publication)
+
     allow(find_or_create_platform).to receive(:call).and_return(platform)
-    allow(find_or_create_release).to receive(:call).and_return(release)
-    allow(find_or_create_publication).to receive(:call).and_return(publication)
 
     allow(create_engines).to receive(:call)
     allow(create_ratings).to receive(:call)
@@ -78,16 +102,75 @@ RSpec.describe Parser::Parser do
     allow(create_covers).to receive(:call)
     allow(create_classifications).to receive(:call)
     allow(create_tech_specs).to receive(:call)
-    result
   end
 
   describe '#call' do
-    it 'calls all of the create helpers' do
-      expect(find_or_create_game).to have_received(:call).with(game_details: game_details)
+    context 'when creating a game' do
+      before do
+        result
+      end
+
+      it 'calls all of the create helpers' do
+        expect(game_repo).to have_received(:find_by).with(title: 'Resident Evil 2')
+        expect(release_repo).to have_received(:find).with(88107)
+        expect(publication_repo).to have_received(:find_by)
+          .with(gameopedia_id: '88107-13-5729-Online (Playstation Network)')
+
+        expect(create_game).to have_received(:call).with(game_details: game_details)
+        expect(create_release).to have_received(:call)
+          .with(game_details: game_details, game: game, platform: platform)
+        expect(create_publication).to have_received(:call).with(game_details: game_details, release: release)
+
+        expect(update_game).not_to have_received(:call)
+        expect(update_release).not_to have_received(:call)
+        expect(update_publication).not_to have_received(:call)
+
+        expect(find_or_create_platform).to have_received(:call).with(game_details: game_details)
+
+        expect(create_engines).to have_received(:call).with(game_details: game_details, game: game)
+        expect(create_ratings).to have_received(:call).with(game_details: game_details, release: release)
+        expect(create_developers).to have_received(:call).with(game_details: game_details, release: release)
+        expect(create_regions).to have_received(:call).with(game_details: game_details, publication: publication)
+        expect(create_publishers).to have_received(:call).with(game_details: game_details, publication: publication)
+        expect(create_reviews).to have_received(:call).with(game_details: game_details, release: release)
+        expect(create_descriptions).to have_received(:call).with(game_details: game_details, publication: publication)
+        expect(create_key_features).to have_received(:call).with(game_details: game_details, publication: publication)
+        expect(create_alternative_titles).to have_received(:call).with(game_details: game_details, release: release)
+        expect(create_videos).to have_received(:call).with(game_details: game_details, release: release)
+        expect(create_links).to have_received(:call).with(game_details: game_details, release: release)
+        expect(create_screenshots).to have_received(:call).with(game_details: game_details, release: release)
+        expect(create_covers).to have_received(:call).with(game_details: game_details, release: release)
+        expect(create_classifications).to have_received(:call).with(game_details: game_details, release: release)
+        expect(create_tech_specs).to have_received(:call).with(game_details: game_details, release: release)
+      end
+    end
+  end
+
+  context 'when the game already exists in the database' do
+    before do
+      allow(game_repo).to receive(:find_by).and_return(game)
+      allow(release_repo).to receive(:find).and_return(release)
+      allow(publication_repo).to receive(:find_by).and_return(publication)
+      result
+    end
+
+    it 'calls create helpers and update helpers' do
+      expect(game_repo).to have_received(:find_by).with(title: 'Resident Evil 2')
+      expect(release_repo).to have_received(:find).with(88107)
+      expect(publication_repo).to have_received(:find_by)
+        .with(gameopedia_id: '88107-13-5729-Online (Playstation Network)')
+
+      expect(create_game).not_to have_received(:call)
+      expect(create_release).not_to have_received(:call)
+      expect(create_publication).not_to have_received(:call)
+
+      expect(update_game).to have_received(:call).with(game_details: game_details, game: game)
+      expect(update_release).to have_received(:call)
+        .with(game_details: game_details, game: game, platform: platform, release: release)
+      expect(update_publication).to have_received(:call)
+        .with(game_details: game_details, publication: publication, release: release)
+
       expect(find_or_create_platform).to have_received(:call).with(game_details: game_details)
-      expect(find_or_create_release).to have_received(:call)
-        .with(game_details: game_details, game: game, platform: platform)
-      expect(find_or_create_publication).to have_received(:call).with(game_details: game_details, release: release)
 
       expect(create_engines).to have_received(:call).with(game_details: game_details, game: game)
       expect(create_ratings).to have_received(:call).with(game_details: game_details, release: release)

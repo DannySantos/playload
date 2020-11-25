@@ -28,7 +28,7 @@ RSpec.describe Parser::Helpers::CreateDevelopers do
       result
     end
 
-    describe 'creating developers' do
+    context 'when creating developers' do
       it 'tries to find the developer in the database' do
         expect(developer_repo).to have_received(:find).with(7478)
       end

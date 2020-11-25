@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe Parser::Helpers::FindOrCreateGame do
-  let(:result)       { described_class.new(new_params).call(game_details: game_details) }
+RSpec.describe Parser::Helpers::CreateGame do
+  let(:result)       { described_class.new(new_params).call(call_params) }
   let(:new_params)   { Hash[game_repo: game_repo] }
   let(:call_params)  { Hash[game_details: game_details] }
   let(:game_repo)    { instance_double GameRepository }

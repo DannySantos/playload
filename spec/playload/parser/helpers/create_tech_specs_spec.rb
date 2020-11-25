@@ -40,22 +40,22 @@ RSpec.describe Parser::Helpers::CreateTechSpecs do
       result
     end
 
-    it 'find or creates all of the tech_spec groups' do
+    it 'finds or creates all of the tech_spec groups' do
       expect(find_or_create_tech_spec_group).to have_received(:call).exactly(3).times
     end
 
-    it 'find or creates the tech_spec groups' do
+    it 'finds or creates the tech_spec groups' do
       game_details['technical_specifications'].each do |tech_spec_group_detail|
         expect(find_or_create_tech_spec_group).to have_received(:call)
           .with(tech_spec_group_detail: tech_spec_group_detail)
       end
     end
 
-    it 'find or creates all of the tech_specs' do
+    it 'finds or creates all of the tech_specs' do
       expect(find_or_create_tech_spec).to have_received(:call).exactly(3).times
     end
 
-    it 'find or creates the tech_specs' do
+    it 'finds or creates the tech_specs' do
       game_details['technical_specifications'].each do |tech_spec_group_detail|
         tech_spec_group_detail['tech_specs'].each do |tech_spec|
           expect(find_or_create_tech_spec).to have_received(:call).with(find_or_create_tech_spec_params[tech_spec])
@@ -63,7 +63,7 @@ RSpec.describe Parser::Helpers::CreateTechSpecs do
       end
     end
 
-    it 'find or creates all of the release_tech_specs' do
+    it 'finds or creates all of the release_tech_specs' do
       expect(find_or_create_release_tech_spec).to have_received(:call).exactly(3).times
     end
   end

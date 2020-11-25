@@ -2,7 +2,7 @@
 
 module Parser
   module Helpers
-    class FindOrCreateGame
+    class CreateGame
       include Import[game_repo: 'repositories.game']
 
       def call(game_details:)

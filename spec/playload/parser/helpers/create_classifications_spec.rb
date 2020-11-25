@@ -40,22 +40,22 @@ RSpec.describe Parser::Helpers::CreateClassifications do
       result
     end
 
-    it 'find or creates all of the classification categories' do
+    it 'finds or creates all of the classification categories' do
       expect(find_or_create_classification_category).to have_received(:call).exactly(6).times
     end
 
-    it 'find or creates the classification categories' do
+    it 'finds or creates the classification categories' do
       game_details['classifications'].each do |classification_category_detail|
         expect(find_or_create_classification_category).to have_received(:call)
           .with(classification_category_detail: classification_category_detail)
       end
     end
 
-    it 'find or creates all of the classifications' do
+    it 'finds or creates all of the classifications' do
       expect(find_or_create_classification).to have_received(:call).exactly(9).times
     end
 
-    it 'find or creates the classifications' do
+    it 'finds or creates the classifications' do
       game_details['classifications'].each do |classification_category_detail|
         classification_category_detail['classifications'].each do |classification|
           expect(find_or_create_classification).to have_received(:call).with(classification_params[classification])
@@ -63,7 +63,7 @@ RSpec.describe Parser::Helpers::CreateClassifications do
       end
     end
 
-    it 'find or creates all of the release_classifications' do
+    it 'finds or creates all of the release_classifications' do
       expect(find_or_create_release_classification).to have_received(:call).exactly(9).times
     end
   end

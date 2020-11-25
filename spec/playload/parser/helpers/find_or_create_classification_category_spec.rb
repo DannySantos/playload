@@ -33,7 +33,7 @@ RSpec.describe Parser::Helpers::FindOrCreateClassificationCategory do
       result
     end
 
-    describe 'creating classification_categories' do
+    context 'when creating classification_categories' do
       it 'tries to find the classification_category in the database' do
         expect(classification_category_repo).to have_received(:find).with(1)
       end

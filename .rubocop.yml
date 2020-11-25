@@ -34,3 +34,6 @@ RSpec/LetSetup:
 
 RSpec/NamedSubject:
   Enabled: true
+
+Style/NumericLiterals:
+  Enabled: false

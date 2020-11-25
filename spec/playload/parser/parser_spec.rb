@@ -110,7 +110,7 @@ RSpec.describe Parser::Parser do
         result
       end
 
-      it 'calls all of the create helpers' do
+      it 'calls all of the create helpers', :aggregate_failures do
         expect(game_repo).to have_received(:find_by).with(title: 'Resident Evil 2')
         expect(release_repo).to have_received(:find).with(88107)
         expect(publication_repo).to have_received(:find_by)
@@ -154,7 +154,7 @@ RSpec.describe Parser::Parser do
       result
     end
 
-    it 'calls create helpers and update helpers' do
+    it 'calls create helpers and update helpers', :aggregate_failures do
       expect(game_repo).to have_received(:find_by).with(title: 'Resident Evil 2')
       expect(release_repo).to have_received(:find).with(88107)
       expect(publication_repo).to have_received(:find_by)

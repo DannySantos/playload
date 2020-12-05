@@ -6,13 +6,12 @@ Hanami::Model.migration do
       primary_key :id
 
       column :name, String, null: false
-      column :priority, String, null: false
+      column :priority, String
       column :value, String, null: false
       column :created_at, DateTime, null: false
       column :updated_at, DateTime, null: false
 
       foreign_key :tech_spec_group_id, :tech_spec_groups, null: false, index: true
-      foreign_key :release_id, :releases, null: false, index: true
     end
   end
 end

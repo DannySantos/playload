@@ -5,7 +5,7 @@ module Parser
     include Import[
       game_repo: 'repositories.game',
       release_repo: 'repositories.release',
-      publication_repo: 'repositories.platform',
+      publication_repo: 'repositories.publication',
       create_game: 'parser.helpers.create_game',
       create_release: 'parser.helpers.create_release',
       create_publication: 'parser.helpers.create_publication',

@@ -5,7 +5,7 @@ Hanami::Model.migration do
     create_table :publications do
       primary_key :id
 
-      column :title, String, null: false, unique: true, index: true
+      column :title, String, null: false, index: true
       column :gameopedia_id, String, null: false, unique: true, index: true
       column :barcode, String, null: true
       column :gameopedia_release_date, String, null: true

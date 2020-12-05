@@ -10,7 +10,9 @@ module Parser
       ]
 
       def call(game_details:, release:)
-        game_details['technical_specifications'].each do |tech_spec_group_detail|
+        tech_specs = game_details['technical_specifications'] || []
+
+        tech_specs.each do |tech_spec_group_detail|
           tech_spec_group_params = { tech_spec_group_detail: tech_spec_group_detail }
           tech_spec_group = find_or_create_tech_spec_group.call(tech_spec_group_params)
 

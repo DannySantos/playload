@@ -10,9 +10,13 @@ module Parser
 
       def call(game_details:, release:)
         group_id = Container['helpers.build_uuid'].call
-        existing_cover = cover_repo.find_by(url: game_details['cover']['original_url'])
-        create_original_cover(game_details['cover'], release, group_id) unless existing_cover
-        create_other_resolutions(game_details['cover'], release, group_id)
+        cover_detail = game_details['cover']
+
+        return unless cover_detail && cover_detail.any?
+
+        existing_cover = cover_repo.find_by(url: cover_detail['original_url'])
+        create_original_cover(cover_detail, release, group_id) unless existing_cover
+        create_other_resolutions(cover_detail, release, group_id)
       end
 
       private

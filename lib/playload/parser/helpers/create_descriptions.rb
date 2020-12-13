@@ -6,7 +6,7 @@ module Parser
       include Import[description_repo: 'repositories.description']
 
       def call(game_details:, publication:)
-        game_details['game_descriptions'].each do |description_details|
+        game_details['game_descriptions']&.each do |description_details|
           existing_description = description_repo.find_by(content: description_details['game_description'])
           next if existing_description
 

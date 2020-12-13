@@ -18,7 +18,7 @@ module Parser
       private
 
       def create_ratings(game_details, release)
-        game_details['PEGI']['ratings'].each do |rating_name|
+        game_details['PEGI']['ratings']&.each do |rating_name|
           existing_rating = rating_repo.find_by(name: rating_name)
           next if existing_rating
 
@@ -28,7 +28,7 @@ module Parser
       end
 
       def create_descriptions(game_details, release)
-        game_details['PEGI']['descriptions'].each do |rating_description_name|
+        game_details['PEGI']['descriptions']&.each do |rating_description_name|
           existing_rating_description = rating_description_repo.find_by(name: rating_description_name)
           next if existing_rating_description
 

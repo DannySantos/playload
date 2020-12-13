@@ -1,4 +1,4 @@
 /public/assets*
 /tmp
 .env.*
-dump.json
+dump.*

@@ -9,7 +9,7 @@ module Parser
       ]
 
       def call(game_details:, game:)
-        game_details['game_engines'].each do |engine|
+        game_details['game_engines']&.each do |engine|
           existing_engine = engine_repo.find_by(name: engine)
           next if existing_engine
 

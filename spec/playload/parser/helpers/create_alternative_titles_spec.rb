@@ -25,7 +25,7 @@ RSpec.describe Parser::Helpers::CreateAlternativeTitles do
       end
 
       it 'tries to find the alternative_titles in the database' do
-        game_details['alternative_titles'].each do |alternative_title_detail|
+        game_details['alternative_titles']&.each do |alternative_title_detail|
           expect(alternative_title_repo).to have_received(:find_by).with(title: alternative_title_detail)
         end
       end
@@ -35,7 +35,7 @@ RSpec.describe Parser::Helpers::CreateAlternativeTitles do
       end
 
       it 'creates the alternative_titles' do
-        game_details['alternative_titles'].each do |alternative_title_detail|
+        game_details['alternative_titles']&.each do |alternative_title_detail|
           expect(alternative_title_repo).to have_received(:create)
             .with(title: alternative_title_detail, release_id: release.id)
         end
@@ -49,7 +49,7 @@ RSpec.describe Parser::Helpers::CreateAlternativeTitles do
       end
 
       it 'tries to find the alternative_titles in the database' do
-        game_details['alternative_titles'].each do |alternative_title_detail|
+        game_details['alternative_titles']&.each do |alternative_title_detail|
           expect(alternative_title_repo).to have_received(:find_by).with(title: alternative_title_detail)
         end
       end

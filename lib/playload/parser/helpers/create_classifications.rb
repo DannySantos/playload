@@ -10,11 +10,11 @@ module Parser
       ]
 
       def call(game_details:, release:)
-        game_details['classifications'].each do |classification_category_detail|
+        game_details['classifications']&.each do |classification_category_detail|
           classification_category_params = { classification_category_detail: classification_category_detail }
           classification_category = find_or_create_classification_category.call(classification_category_params)
 
-          classification_category_detail['classifications'].each do |classification_detail|
+          classification_category_detail['classifications']&.each do |classification_detail|
             handle_classification(classification_detail, classification_category, release)
           end
         end

@@ -36,7 +36,7 @@ RSpec.describe Parser::Helpers::CreateCovers do
       end
 
       it 'tries to find all of the covers in the database' do
-        game_details['cover']['other_resolutions'].each do |resolution|
+        game_details['cover']['other_resolutions']&.each do |resolution|
           expect(cover_repo).to have_received(:find_by).with(url: resolution['url'])
         end
       end
@@ -48,7 +48,7 @@ RSpec.describe Parser::Helpers::CreateCovers do
       end
 
       it 'creates all of the covers' do
-        game_details['cover']['other_resolutions'].each do |resolution|
+        game_details['cover']['other_resolutions']&.each do |resolution|
           expect(cover_repo).to have_received(:create)
             .with(url: resolution['url'], type: resolution['type'], group_id: anything, release_id: release.id)
         end
@@ -67,7 +67,7 @@ RSpec.describe Parser::Helpers::CreateCovers do
       end
 
       it 'tries to find all of the covers in the database' do
-        game_details['cover']['other_resolutions'].each do |resolution|
+        game_details['cover']['other_resolutions']&.each do |resolution|
           expect(cover_repo).to have_received(:find_by).with(url: resolution['url'])
         end
       end

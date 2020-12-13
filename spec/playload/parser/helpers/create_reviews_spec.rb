@@ -107,7 +107,7 @@ RSpec.describe Parser::Helpers::CreateReviews do
       end
 
       it 'creates the reviewers' do
-        game_details['reviews'].each do |review_details|
+        game_details['reviews']&.each do |review_details|
           expect(find_or_create_reviewer).to have_received(:call).with(review_details: review_details)
         end
       end
@@ -117,7 +117,7 @@ RSpec.describe Parser::Helpers::CreateReviews do
       end
 
       it 'creates the regions' do
-        game_details['reviews'].each do |review_details|
+        game_details['reviews']&.each do |review_details|
           expect(find_or_create_region).to have_received(:call).with(review_details: review_details)
         end
       end

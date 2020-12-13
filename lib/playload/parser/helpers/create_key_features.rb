@@ -6,7 +6,7 @@ module Parser
       include Import[key_feature_repo: 'repositories.key_feature']
 
       def call(game_details:, publication:)
-        game_details['key_features_list'].each do |key_feature_details|
+        game_details['key_features_list']&.each do |key_feature_details|
           existing_key_feature = key_feature_repo.find_by(text: key_feature_details['key_features'])
           next if existing_key_feature
 

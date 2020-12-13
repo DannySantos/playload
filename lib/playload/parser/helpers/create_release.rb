@@ -17,7 +17,7 @@ module Parser
       def fetch_release_attrs(game_details, game, platform)
         {
           id: game_details['release_id'],
-          updated_by_gameopedia: Time.parse(game_details['updated']),
+          updated_by_gameopedia: game_details['updated'],
           game_id: game.id,
           platform_id: platform.id
         }

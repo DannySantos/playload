@@ -29,7 +29,7 @@ module Parser
       end
 
       def create_other_resolutions(screenshot_detail, release, group_id)
-        screenshot_detail['other_resolutions'].each do |resolution_detail|
+        screenshot_detail['other_resolutions']&.each do |resolution_detail|
           existing_resolution = screenshot_repo.find_by(url: resolution_detail['url'])
           next if existing_resolution
 

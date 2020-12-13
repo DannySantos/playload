@@ -6,7 +6,7 @@ module Parser
       include Import[link_repo: 'repositories.link']
 
       def call(game_details:, release:)
-        game_details['links'].each do |link_detail|
+        game_details['links']&.each do |link_detail|
           existing_link = link_repo.find_by(url: link_detail['url'])
           next if existing_link
 

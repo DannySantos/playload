@@ -9,7 +9,7 @@ module Parser
       ]
 
       def call(game_details:, release:)
-        game_details['companies']['developers'].each do |developer_details|
+        game_details['companies']['developers']&.each do |developer_details|
           existing_developer = developer_repo.find(developer_details['id'].to_i)
           next if existing_developer
 

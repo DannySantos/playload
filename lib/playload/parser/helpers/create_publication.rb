@@ -21,16 +21,9 @@ module Parser
           release_id: release.id,
           barcode: game_details['barcode'],
           gameopedia_release_date: game_details['release_date'],
-          release_date: fetch_release_date(game_details),
+          release_date: game_details['release_date'],
           distribution: game_details['distribution']
         }
-      end
-
-      def fetch_release_date(game_details)
-        release_date = game_details['release_date']
-        return nil if release_date.count('a-zA-Z').positive?
-
-        Time.parse(game_details['release_date'])
       end
     end
   end

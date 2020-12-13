@@ -9,8 +9,9 @@ module Parser
       ]
 
       def call(game_details:, publication:)
-        game_details['companies']['publishers'].each do |publisher_details|
+        game_details['companies']['publishers']&.each do |publisher_details|
           existing_publisher = publisher_repo.find(publisher_details['id'].to_i)
+          existing_publisher ||= publisher_repo.find_by(name: publisher_details['name'])
           next if existing_publisher
 
           publisher = create_publisher(publisher_details)

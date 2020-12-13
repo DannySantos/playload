@@ -31,7 +31,7 @@ module Parser
       end
 
       def create_other_resolutions(cover_detail, release, group_id)
-        cover_detail['other_resolutions'].each do |resolution_detail|
+        cover_detail['other_resolutions']&.each do |resolution_detail|
           existing_resolution = cover_repo.find_by(url: resolution_detail['url'])
           next if existing_resolution
 

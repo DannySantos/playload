@@ -5,7 +5,7 @@ Hanami::Model.migration do
     create_table :releases do
       primary_key :id
 
-      column :updated_by_gameopedia, DateTime, null: false
+      column :updated_by_gameopedia, String, null: false
       column :created_at, DateTime, null: false
       column :updated_at, DateTime, null: false
 
